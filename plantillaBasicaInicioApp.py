@@ -1,7 +1,11 @@
 import logging
 import sys
+import os
 
 print("Esta linea es la primera que se ejecuta")
+
+def startApp(argvs):
+    # TODO some stuff
 
 
 def main(argv):
@@ -12,6 +16,13 @@ def main(argv):
 
     log = logging.getLogger(__name__)
     log.info(argv)
+
+    parametros =os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'file.ini'))
+    with open(parametros, 'r') as f:
+        argvs = load(f)
+        startAppa(argvs)
+
+
 
 
 """
